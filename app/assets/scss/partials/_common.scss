@@ -1,0 +1,57 @@
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    
+}
+section{
+    padding: 63px 0px;
+}
+
+.title{
+    h1{
+        font-size: 24px;
+        color: #333333;
+        letter-spacing: 0.25px;
+        font-weight: 400;
+        text-align: center;
+        clear: both;
+        margin-bottom:45px;
+        span{
+            color: $base-color;
+        }
+        
+    }
+}
+.content-text{
+    h2{
+        font-size: 20px;
+        color: #333333;
+        letter-spacing: 0.21px;
+        font-weight: 500;
+    }
+    p{
+        font-size: 16px;
+        color: #333333;
+        letter-spacing: 0.17px;
+       
+    }
+}
+.outer{
+    display: table;
+    margin: 0 auto;
+    width: 100%;
+    .inner{
+        display: table-cell;
+        vertical-align: middle;
+        height: 100vh;
+    }
+}
+.form-control{
+    box-shadow: none;
+    border-radius: 0px;
+    border: 1px solid #666;
+    &:focus{
+        box-shadow: none;
+        border-color: $base-color;
+    }
+}
