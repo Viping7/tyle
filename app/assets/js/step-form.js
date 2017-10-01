@@ -1,5 +1,9 @@
+var width = $(window).width();
 $(window).on('resize', function () {
+    if($(this).width() != width){
+        width = $(this).width();
     window.location.reload();
+    }
 })
 
 // Main function to trigger tyle
