@@ -43,13 +43,6 @@ header {
     .btn.btn-custom {
       padding: 12px 27px; } }
 
-.btn-default {
-  position: relative;
-  z-index: 9999999; }
-  @media (max-width: 767px) {
-    .btn-default {
-      display: none; } }
-
 section.form-area {
   padding: 0px;
   overflow: hidden;
@@ -57,34 +50,51 @@ section.form-area {
   max-height: 78vh;
   text-align: center; }
   section.form-area .progress-indicator {
-    background: rgba(69, 201, 148, 0.71);
-    height: 1px;
+    background: rgba(69, 201, 148, 0.41);
+    height: 5px;
+    border-radius: 10px;
     display: table;
     margin: 0 auto;
     width: 250px;
     margin-bottom: 80px;
+    z-index: 99;
     margin-top: 10px;
     position: relative; }
     section.form-area .progress-indicator .progress-bar {
       position: absolute;
-      height: 1px;
+      height: 5px;
       width: 0%;
+      top: 0px;
+      border-radius: 10px;
       background: #45C994;
       left: 0px; }
-      section.form-area .progress-indicator .progress-bar:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        background: #45C994;
-        width: 2px;
-        height: 10px;
-        right: 0px;
-        top: -5px;
-        z-index: 99; }
   section.form-area .step-nav {
     position: fixed;
     right: 0px;
     top: 50%; }
+    section.form-area .step-nav .nav-btn {
+      position: relative;
+      display: inline-block;
+      z-index: 99;
+      border: none;
+      background: none;
+      box-shadow: none;
+      margin: 0px 3px;
+      vertical-align: middle; }
+      section.form-area .step-nav .nav-btn img {
+        height: 30px; }
+      section.form-area .step-nav .nav-btn:disabled {
+        opacity: 0.5; }
+      section.form-area .step-nav .nav-btn:focus {
+        outline: none; }
+      section.form-area .step-nav .nav-btn.next-btn {
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); }
+      @media (max-width: 991px) {
+        section.form-area .step-nav .nav-btn {
+          display: none; } }
   section.form-area .item {
     transition: all 1.3s;
     position: relative;

@@ -30,10 +30,10 @@ gulp.task('sass',function(){
 gulp.task('image', function(){
 	return gulp.src('app/assets/img/**/*.+(png|jpg|gif|svg)')
 				.pipe(image())
-				.pipe(gulp.dest('dist/assets/img'));
+				.pipe(gulp.dest('docs/assets/img'));
 })
 gulp.task('useref',function(){
-	return gulp.src('app/*.html').pipe(useref()).pipe(gulpIf('*.js',uglify())).pipe(gulpIf('*.css',cssnano())).pipe(gulp.dest('dist')).pipe(browserSync.reload({stream:true}));
+	return gulp.src('app/*.html').pipe(useref()).pipe(gulpIf('*.js',uglify())).pipe(gulpIf('*.css',cssnano())).pipe(gulp.dest('docs')).pipe(browserSync.reload({stream:true}));
 });
 gulp.task('build',['useref','image']);
 gulp.task('watch',['browser-sync','sass'],function(){

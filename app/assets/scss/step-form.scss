@@ -55,14 +55,9 @@ header{
             padding: 12px 27px;
         }
     }
+   
 }
-.btn-default{
-    position: relative;
-    z-index: 9999999;
-    @media(max-width:767px) {
-        display: none;
-    }
-}
+
 section{
   
     &.form-area{
@@ -73,30 +68,24 @@ section{
         text-align: center;
         .progress-indicator{
             background: $sec-color;
-            height: 1px;
+            height: 5px;
+            border-radius: 10px;
             display:table;
             margin:0 auto;
             width:250px;
             margin-bottom:80px;
+            z-index: 99;
             margin-top: 10px;
             position:relative;
             .progress-bar{
                 position:absolute;
-                height:1px;
+                height:5px;
                 width:0%;
+                top: 0px;
+            border-radius: 10px;
                 background:$base-color;
                 left:0px;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    width:100%;
-                    background:$base-color;
-                    width:2px;
-                    height: 10px;
-                    right: 0px;
-                    top:-5px;
-                    z-index: 99;
-                }
+                
             }
 
         }
@@ -104,6 +93,36 @@ section{
             position:fixed;
             right:0px;
             top:50%;
+            
+.nav-btn{
+    position: relative;
+    display: inline-block;
+    z-index: 99;
+    border:none;
+    background: none;
+    box-shadow: none;
+    margin: 0px 3px;
+    vertical-align: middle;
+    img{
+        height: 30px;
+    }
+    &:disabled{
+        opacity: 0.5;
+    }
+    &:focus{
+        outline: none;
+    }
+&.next-btn{
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+    @media(max-width:991px) {
+        display: none;
+    }
+}
+            
         }
         .item{
             transition: all 1.3s;

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" sizes="16x16" type="image/png">
-    <title>Skin Craft</title>
+    <title>Tyle</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
     <!--build:css assets/css/main.min.css -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
@@ -30,16 +30,11 @@
     <section class="form-area">
         <div class="container">
             <div class="row">
-                <div class="step-nav">
-
-                    <button class="btn btn-default form-item-changer prev-btn" btn-type='prev' disabled="true">Prev</button>
-                    <button class="btn btn-default form-item-changer next-btn">next</button>
-                </div>
                 <div class="col-md-10 col-md-offset-1">
                     <div class="progress-indicator">
                         <span class="progress-bar"></span>
                     </div>
-                    <div class="step-container">
+                    <div class="tyle-container">
                         <div class="item active">
 
                             <div class="user-intro name">
@@ -78,6 +73,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="step-nav">
+
+                        <button class="form-item-changer nav-btn prev-btn" btn-type='prev' disabled="true"><img src="assets/img/icons/up-arrow.svg" class="img-responsive"></button>
+                        <button class="form-item-changer nav-btn next-btn"><img src="assets/img/icons/up-arrow.svg"></but>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,7 +91,14 @@
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/step-form.js"></script>
     <script src="assets/js/owl.carousel.js"></script>
+   
     <!--endbuild-->
+    <script>
+        
+    $(document).on('ready', function () {
+        $('.tyle-container').tyle();
+    })
+        </script>
 </body>
 
 </html>
