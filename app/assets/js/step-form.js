@@ -1,7 +1,6 @@
 var width = $(window).width();
 $(window).on('resize', function () {
     if($(this).width() != width){
-        width = $(this).width();
     window.location.reload();
     }
 })
@@ -21,10 +20,18 @@ $.fn.tyle = function () {
     });
 }
 
+//To fix owl carousel auto height issue while keypad id present in prev screen in mobile
+function autoHeightAdjust(height){
+    $('.auto-height-adjust').css({height:height+'px'});
+}
+
+
 // Function for responsive layout and transition using owl.carousel
 
 function responsiveForm(targetElement, triggerElement) {
+    
     targetElement.addClass('owl-carousel owl-theme');
+  
     $('.owl-carousel .form-item-changer').click(function () {
         $('.owl-carousel').trigger('next.owl.carousel');
     })
@@ -46,6 +53,14 @@ function responsiveForm(targetElement, triggerElement) {
     })
     $('.owl-carousel').on('changed.owl.carousel', function (event) {
         progressIndication(event.item.index, itemLength);
+        var activeItem=targetElement.find('.active');
+     
+        if(activeItem.has('input').length>0){
+            var nextItem=activeItem.next();
+            activeItem.addClass('auto-height-adjust');
+            var nextItemHeight=nextItem.height();
+            autoHeightAdjust(nextItemHeight);
+        }
     });
 }
 
@@ -53,6 +68,7 @@ function responsiveForm(targetElement, triggerElement) {
 
 $.fn.initTyle = function (targetElement) {
     var activeItem = targetElement.children('.active');
+   
     var itemIndex = targetElement.children().index(activeItem);
     var nextItemIndex = targetElement.children().index(activeItem.next().next())
     var btnType = $(this).attr('btn-type')
