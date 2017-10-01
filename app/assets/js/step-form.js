@@ -1,14 +1,17 @@
 var width = $(window).width();
 $(window).on('resize', function () {
-    if($(this).width() != width){
-    window.location.reload();
+    if ($(this).width() != width) {
+        window.location.reload();
     }
 })
 
 // Main function to trigger tyle
 $.fn.tyle = function () {
     var targetElement = $(this);
+    targetElement.before(' <div class="progress-indicator"><span class="progress-bar"></span></div>')
+    targetElement.after('<div class="step-nav"><button class="form-item-changer nav-btn prev-btn" btn-type="prev" disabled="true"><img src="assets/img/icons/up-arrow.svg" class="img-responsive"></button><button class="form-item-changer nav-btn next-btn"><img src="assets/img/icons/up-arrow.svg"></button></div>')
     itemLength = targetElement.children().length;
+    targetElement.children().first().addClass('active');
     progressIndication(0, itemLength);
     if ($(window).width() < 991) {
         responsiveForm(targetElement)
@@ -21,17 +24,17 @@ $.fn.tyle = function () {
 }
 
 //To fix owl carousel auto height issue while keypad id present in prev screen in mobile
-function autoHeightAdjust(height){
-    $('.auto-height-adjust').css({height:height+'px'});
+function autoHeightAdjust(height) {
+    $('.auto-height-adjust').css({ height: height + 'px' });
 }
 
 
 // Function for responsive layout and transition using owl.carousel
 
 function responsiveForm(targetElement, triggerElement) {
-    
+
     targetElement.addClass('owl-carousel owl-theme');
-  
+
     $('.owl-carousel .form-item-changer').click(function () {
         $('.owl-carousel').trigger('next.owl.carousel');
     })
@@ -42,6 +45,7 @@ function responsiveForm(targetElement, triggerElement) {
         dots: false,
         autoHeight: true,
         touchDrag: false,
+        navElement: "img src='assets/img/icons/up-arrow.svg'",
         responsive: {
             0: {
                 items: 1
@@ -53,12 +57,12 @@ function responsiveForm(targetElement, triggerElement) {
     })
     $('.owl-carousel').on('changed.owl.carousel', function (event) {
         progressIndication(event.item.index, itemLength);
-        var activeItem=targetElement.find('.active');
-     
-        if(activeItem.has('input').length>0){
-            var nextItem=activeItem.next();
+        var activeItem = targetElement.find('.active');
+
+        if (activeItem.has('input').length > 0) {
+            var nextItem = activeItem.next();
             activeItem.addClass('auto-height-adjust');
-            var nextItemHeight=nextItem.height();
+            var nextItemHeight = nextItem.height();
             autoHeightAdjust(nextItemHeight);
         }
     });
@@ -68,7 +72,7 @@ function responsiveForm(targetElement, triggerElement) {
 
 $.fn.initTyle = function (targetElement) {
     var activeItem = targetElement.children('.active');
-   
+
     var itemIndex = targetElement.children().index(activeItem);
     var nextItemIndex = targetElement.children().index(activeItem.next().next())
     var btnType = $(this).attr('btn-type')

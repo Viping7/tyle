@@ -1,0 +1,63 @@
+@import 'partials/variables';
+body{
+    font-family: 'Quicksand', sans-serif;
+    background: #fafafa;
+}
+header{
+    padding:20px 0px; 
+   text-align: center;
+   h1{
+       font-size: 40px;
+       font-weight: 500;
+       span{
+        color: $base-color;
+    }
+   }
+}
+
+.btn{
+    &.btn-custom{
+        padding: 10px 37px;
+        border-radius: 4px;
+        margin:10px 5px 0px 5px;
+        background: $base-color;
+        border: 1px solid transparent;
+        color: #fff;
+       
+        &:hover{
+            border-color: $base-color;
+            color: $base-color;
+            background: none;
+          
+        }
+        &.btn-custom-inverse{
+            border-color: $base-color;
+            color: $base-color;
+            background: none;
+            &:hover{
+                background: $base-color;
+                color:#fff;
+                
+            }
+        }
+        @media(max-width:767px){
+            padding: 12px 27px;
+        }
+    }
+   
+}
+.form-control{
+    border-radius: 2px;
+    width: 450px;
+    display: table;
+    margin: 0 auto;
+    box-shadow: none;
+    border:1px solid #ddd;
+    &:focus{
+        border-color:$base-color;
+        box-shadow: none;
+    }
+    @media (max-width:600px){
+        width: 100%;
+    }
+}

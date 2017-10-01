@@ -1,0 +1,48 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #fafafa; }
+
+header {
+  padding: 20px 0px;
+  text-align: center; }
+  header h1 {
+    font-size: 40px;
+    font-weight: 500; }
+    header h1 span {
+      color: #45C994; }
+
+.btn.btn-custom {
+  padding: 10px 37px;
+  border-radius: 4px;
+  margin: 10px 5px 0px 5px;
+  background: #45C994;
+  border: 1px solid transparent;
+  color: #fff; }
+  .btn.btn-custom:hover {
+    border-color: #45C994;
+    color: #45C994;
+    background: none; }
+  .btn.btn-custom.btn-custom-inverse {
+    border-color: #45C994;
+    color: #45C994;
+    background: none; }
+    .btn.btn-custom.btn-custom-inverse:hover {
+      background: #45C994;
+      color: #fff; }
+  @media (max-width: 767px) {
+    .btn.btn-custom {
+      padding: 12px 27px; } }
+
+.form-control {
+  border-radius: 2px;
+  width: 450px;
+  display: table;
+  margin: 0 auto;
+  box-shadow: none;
+  border: 1px solid #ddd; }
+  .form-control:focus {
+    border-color: #45C994;
+    box-shadow: none; }
+  @media (max-width: 600px) {
+    .form-control {
+      width: 100%; } }
