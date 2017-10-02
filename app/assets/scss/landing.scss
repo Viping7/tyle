@@ -134,7 +134,20 @@ section{
     }
 }
 &.options{
-    background: #f0f0f0;
+    background: #fff;
+    .option-item{
+        margin-bottom: 50px;
+        p{
+            font-weight:600;
+            em{
+                font-weight: 500;
+                margin-left: 20px;
+            }
+        }
+        h4{
+            margin-top:30px;
+        }
+    }
 }
 .steps{
     margin-bottom: 60px;

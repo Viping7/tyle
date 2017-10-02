@@ -126,7 +126,16 @@ section {
       background: rgba(73, 78, 165, 0.41);
       position: absolute; }
   section.options {
-    background: #f0f0f0; }
+    background: #fff; }
+    section.options .option-item {
+      margin-bottom: 50px; }
+      section.options .option-item p {
+        font-weight: 600; }
+        section.options .option-item p em {
+          font-weight: 500;
+          margin-left: 20px; }
+      section.options .option-item h4 {
+        margin-top: 30px; }
   section .steps {
     margin-bottom: 60px; }
   section pre {

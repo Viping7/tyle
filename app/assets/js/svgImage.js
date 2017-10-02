@@ -29,9 +29,11 @@ $(document).ready(function(){
     });
 })
 
-$('.get-start').click(function () {
-    var offsetPos=$('#getting-started').offset().top;
+$('.scroll').click(function (event) {
+    event.preventDefault();
+    var offsetEle=$(this).attr('href');
+    var offsetPos=$(offsetEle).offset().top;
 	$('html,body').animate({
 		scrollTop: offsetPos+'px'
-	})
+	},1200)
 })

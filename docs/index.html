@@ -29,7 +29,8 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#getting-started" class='get-start' >Getting Started</a></li>
+                  <li><a href="#getting-started" class='scroll' >Getting Started</a></li>
+                  <li><a href="#options" class='scroll' >Options</a></li>
                   <li><a href="quiz.html" target='_blank'>View Demo</a></li>
                   <li><a href="https://github.com/Viping7/tyle/archive/master.zip" class="btn btn-custom" download>Download</a></li>
                 </ul>
@@ -94,14 +95,53 @@
                     <pre><code>
 $('.tyle-container').tyle();          
                     </code></pre>
-                    <p><strong>Note:</strong> 900 here is animation duration, If not specified it will take default duration which is 1300</p>
+                 
                     </div>
     </div>
             </div>
         </div>
     </section>
-    <section class="options">
+    <section class="options" id='options'>
         <h1>Options</h1>
+        <div class="container">
+            <div class="col-md-12 option-item">
+                <h3>duration</h3>
+                <p>Type: <em>Number</em></p>
+                <p>Default: <em>1300</em></p>
+                <h4>To set the animation duration</h4>
+                <pre><code>
+$('.tyle-container').tyle({duration:1500});          
+                                            </code></pre>
+            </div>
+            <div class="col-md-12 option-item">
+                    <h3>showProgress</h3>
+                    <p>Type: <em>Boolean</em></p>
+                    <p>Default: <em>true</em></p>
+                    <h4>To show progress bar</h4>
+                    <pre><code>
+$('.tyle-container').tyle({showProgress:false});          
+                                                </code></pre>
+                </div>
+            <div class="col-md-12 option-item">
+                    <h3>showProgressCount</h3>
+                    <p>Type: <em>Boolean</em></p>
+                    <p>Default: <em>true</em></p>
+                    <h4>To show progress count</h4>
+                    <pre><code>
+$('.tyle-container').tyle({showProgressCount:false});          
+                                                </code></pre>
+                </div>
+            <div class="col-md-12 option-item">
+                    <h3>onFinish</h3>
+                    <p>Type: <em>event</em></p>
+                    <h4>To perform some action on finish</h4>
+                    <pre><code>
+$('.tyle-container').tyle({onFinish:function(){ 
+    alert('Event Finished')
+}});          
+                                                </code></pre>
+                </div>
+        </div>
     </section>
     <footer>
         <div class='container'>
