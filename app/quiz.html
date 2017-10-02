@@ -25,25 +25,19 @@
     </header>
 
     <section class="tyle-area">
-
+        <div class="container">
+            
         <div class="tyle-container">
+           
             <div class="item">
                 <div class="outer">
                     <div class="inner">
-                        <h3>What's your first name?*</h3>
-                        <input type="text" class="form-control">
-                        <button class="btn btn-custom form-item-changer">Next</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="outer">
-                    <div class="inner">
-                        <h3>Where would you find the Mariana Trench?</h3>
-                        <button class="btn btn-custom form-item-changer">Atlantic Ocean</button>
-                        <button class="btn btn-custom form-item-changer">Indian Ocean</button>
-                        <button class="btn btn-custom form-item-changer">Pacific Ocean</button>
-                        <button class="btn btn-custom form-item-changer">Artic Ocean</button>
+                        <h3>Phileas Fogg stopped off in what is now Mumbai on his voyage around the world, but at which club in the city did Nicolas Anelka start his managerial journey?
+                                ?</h3>
+                        <button class="btn btn-custom form-item-changer">Bengal Mumbai FC</button>
+                        <button class="btn btn-custom form-item-changer">Mumbai United</button>
+                        <button class="btn btn-custom form-item-changer">Mumbai City FC</button>
+                        <button class="btn btn-custom form-item-changer">Mumbai Tigers</button>
                     </div>
                 </div>
             </div>
@@ -51,22 +45,60 @@
             <div class="item">
                 <div class="outer">
                     <div class="inner">
-                        <h3>What is the capital city of Australia?*</h3>
+                        <h3>When Cuco Martina scored against Arsenal this season he became the first representative of which national team to score in the Premier League?</h3>
 
 
-                        <button class="btn btn-custom">Sydney</button>
-                        <button class="btn btn-custom">Adelide</button>
-                        <button class="btn btn-custom">Caneberra</button>
-                        <button class="btn btn-custom">Melbourne</button>
+                        <button class="btn btn-custom form-item-changer">Dominica</button>
+                        <button class="btn btn-custom form-item-changer">Curaçao</button>
+                        <button class="btn btn-custom form-item-changer">Brazil</button>
+                        <button class="btn btn-custom form-item-changer">Cape Verde</button>
                     </div>
                 </div>
+            </div>
+
+            <div class="item">
+                    <div class="outer">
+                        <div class="inner">
+                            <h3>In which country would you find the world's largest football stadium (by capacity)?</h3>
+    
+    
+                            <button class="btn btn-custom form-item-changer">North Korea</button>
+                            <button class="btn btn-custom form-item-changer">Spain</button>
+                            <button class="btn btn-custom form-item-changer">Brazil</button>
+                            <button class="btn btn-custom form-item-changer">Mexico</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="item">
+                    <div class="outer">
+                            <div class="inner">
+                                <h3>Who finished the 2014-15 Ligue 1 season as top scorer?</h3>
+                                <button class="btn btn-custom form-item-changer">Zlatan Ibrahimovic</button>
+                                <button class="btn btn-custom form-item-changer">Edinson Cavani</button>
+                                <button class="btn btn-custom form-item-changer">Alexandre Lacazette</button>
+                                <button class="btn btn-custom form-item-changer">André Ayew</button>
+                            </div>
+                    </div>
+            </div>
+            <div class="item">
+                    <div class="outer">
+                            <div class="inner">
+                                <h3>Which club have won the most Serie A titles?</h3>
+                                <button class="btn btn-custom form-item-changer">Roma</button>
+                                <button class="btn btn-custom form-item-changer">Milan</button>
+                                <button class="btn btn-custom form-item-changer">Internazionale</button>
+                                <button class="btn btn-custom form-item-changer">Juventus</button>
+                            </div>
+                    </div>
             </div>
         </div>
 
 
         </div>
 
+    </div>
     </section>
+    
     <!--build:js assets/js/quiz.min.js -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
@@ -74,7 +106,7 @@
     <!--endbuild-->
     <script>
         $(document).on('ready', function () {
-            $('.tyle-container').tyle(900);
+            $('.tyle-container').tyle({duration:900,showProgress:true,showProgressCount:true});
         })
     </script>
 </body>

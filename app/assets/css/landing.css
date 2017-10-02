@@ -31,7 +31,7 @@ body {
   .outer .inner {
     display: table-cell;
     vertical-align: middle;
-    height: 45vh; }
+    height: 40vh; }
     @media (max-width: 991px) {
       .outer .inner {
         height: auto; } }
@@ -41,7 +41,7 @@ header .navbar-inverse {
   border: none; }
   header .navbar-inverse .navbar-brand {
     font-size: 25px;
-    color: #fff; }
+    color: white; }
   header .navbar-inverse .navbar-nav li {
     margin: 0px 5px; }
     header .navbar-inverse .navbar-nav li a {
@@ -125,6 +125,8 @@ section {
       height: 2px;
       background: rgba(73, 78, 165, 0.41);
       position: absolute; }
+  section.options {
+    background: #f0f0f0; }
   section .steps {
     margin-bottom: 60px; }
   section pre {

@@ -24,3 +24,12 @@ header {
   @media (max-width: 600px) {
     .form-control {
       width: 100%; } }
+
+.btn.btn-custom {
+  width: 200px; }
+
+.tyle-container h3 {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0px 100px;
+  line-height: 35px; }

@@ -31,7 +31,7 @@ body {
   .outer .inner {
     display: table-cell;
     vertical-align: middle;
-    height: 45vh; }
+    height: 40vh; }
     @media (max-width: 991px) {
       .outer .inner {
         height: auto; } }
@@ -42,6 +42,8 @@ body {
   min-height: 78vh;
   max-height: 78vh;
   text-align: center; }
+  .tyle-area .progress-container {
+    margin-bottom: 80px; }
   .tyle-area .progress-indicator {
     background: rgba(73, 78, 165, 0.41);
     height: 5px;
@@ -49,8 +51,8 @@ body {
     display: table;
     margin: 0 auto;
     width: 250px;
-    margin-bottom: 80px;
     z-index: 99;
+    margin-bottom: 20px;
     margin-top: 10px;
     position: relative; }
     .tyle-area .progress-indicator .progress-bar {
@@ -65,7 +67,7 @@ body {
     position: fixed;
     right: 10px;
     top: 49%;
-    z-index: 9999999999999999; }
+    z-index: 999; }
     .tyle-area .step-nav .nav-btn {
       position: relative;
       display: inline-block;
@@ -113,3 +115,16 @@ body {
       min-height: 0;
       white-space: nowrap;
       overflow-x: hidden; } }
+
+.success-msg {
+  position: fixed;
+  width: 50%;
+  display: none;
+  height: 50%;
+  background: #eee;
+  top: 25%;
+  left: 25%;
+  z-index: 99999;
+  text-align: center; }
+  .success-msg .inner {
+    height: 50vh; }

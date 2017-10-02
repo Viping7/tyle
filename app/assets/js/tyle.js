@@ -1,5 +1,12 @@
 'use strict';
 var itemLength;
+var defaultOptions = {
+    showProgress: true,
+    showProgressCount: true,
+    onFinish: function () {
+        alert('Finished');
+    }
+};
 var width = $(window).width();
 $(window).on('resize', function () {
     if ($(this).width() !== width) {
@@ -8,15 +15,38 @@ $(window).on('resize', function () {
 });
 
 // Main function to trigger tyle
-$.fn.tyle = function (animDuration) {
+$.fn.tyle = function (options) {
+    var showProgressBar, showProgressCount;
     var targetElement = $(this);
-    targetElement.before(' <div class="progress-indicator"><span class="progress-bar"></span></div>');
+    targetElement.before(' <div class="progress-container"></div>');
+    if (options.showProgress == undefined) {
+        showProgressBar = defaultOptions.showProgress;
+    }
+    else {
+        showProgressBar = options.showProgress;
+    }
+
+    if (options.showProgressCount == undefined) {
+        showProgressCount = defaultOptions.showProgressCount;
+    }
+    else {
+        showProgressCount = options.showProgressCount;
+    }
+    if (options.onFinish != undefined && typeof (options.onFinish) == 'function') {
+        defaultOptions.onFinish = options.onFinish;
+    }
+    if (showProgressBar) {
+        $('.progress-container').append('<div class="progress-indicator"><span class="progress-bar"></span></div>');
+    }
+    if (showProgressCount) {
+        $('.progress-container').append(' <div class="progress-count"></div>');
+    }
     targetElement.after('<div class="step-nav"><button class="form-item-changer nav-btn prev-btn" btn-type="prev" disabled="true">Prev</button><button class="form-item-changer nav-btn next-btn">Next</button></div>');
     targetElement.children().css({
-        '-webkit-transition-duration': animDuration / 1000 + 's',
-        '-moz-transition-duration': animDuration / 1000 + 's',
-        '-mz-transition-duration': animDuration / 1000 + 's',
-        'transition-duration': animDuration / 1000 + 's'
+        '-webkit-transition-duration': options.duration / 1000 + 's',
+        '-moz-transition-duration': options.duration / 1000 + 's',
+        '-mz-transition-duration': options.duration / 1000 + 's',
+        'transition-duration': options.duration / 1000 + 's'
     });
     itemLength = targetElement.children().length;
     targetElement.children().first().addClass('active');
@@ -47,8 +77,11 @@ $.fn.initTyle = function (targetElement, transType) {
     if (nextItemIndex < 0) {
         disableBtn('.next-btn', true);
     }
-    if (itemIndex >= 0) {
+    if ((itemIndex >= 0 && itemIndex < itemLength - 1) || btnType == 'prev') {
         elementTransitionType(activeItem, itemLength, itemIndex, btnType, transType);
+    }
+    else {
+        defaultOptions.onFinish(); // On end
     }
 };
 
@@ -62,14 +95,15 @@ function disableBtn(btn, flag) {
 
 function progressIndication(itemIndex, itemLength) {
     var progressPercent;
+    $('.progress-count').html('Questions ' + (itemIndex + 1) + ' of ' + itemLength);
     if (itemIndex <= itemLength - 1) {
         progressPercent = (itemIndex + 1) / itemLength * 100;
     }
-    $('.progress-bar').css({'width': progressPercent + '%'});
+    $('.progress-bar').css({ 'width': progressPercent + '%' });
 }
 // To get the type of transition
-function elementTransitionType(activeItem, itemLength, itemIndex, btnType, transType){
-    var transitionAxis, activeItemHeight, nextItemTransitionPos; 
+function elementTransitionType(activeItem, itemLength, itemIndex, btnType, transType) {
+    var transitionAxis, activeItemHeight, nextItemTransitionPos;
     itemIndex = itemIndex + 1;
     if (transType === 'height') {
         activeItemHeight = activeItem.height();
@@ -79,7 +113,7 @@ function elementTransitionType(activeItem, itemLength, itemIndex, btnType, trans
         transitionAxis = 'X'; // For selecting translate axis
     }
     var currentItemTransitionPos;
-    if(btnType === 'prev'){
+    if (btnType === 'prev') {
         progressIndication(itemIndex - 2, itemLength); // Subtracting 2 to get current progress 
         disableBtn('.next-btn', false);
         itemIndex = itemIndex;
@@ -104,6 +138,7 @@ function elementTransitionType(activeItem, itemLength, itemIndex, btnType, trans
 // Transition Styles
 
 function transitionStyles(activeItem, effectingEle, cpos, npos, transitionAxis) {
-    activeItem.removeClass('active').css({transform: 'translate' + transitionAxis + '(' + cpos * 1.5 + 'px)'}); //Transition for the current element to exit viewport
-    effectingEle.addClass('active').css({transform: 'translate' + transitionAxis + '(' + npos + 'px)'}); //Transition for the next element to enter viewport
+    activeItem.removeClass('active').css({ transform: 'translate' + transitionAxis + '(' + cpos * 1.5 + 'px)' }); //Transition for the current element to exit viewport
+    effectingEle.addClass('active').css({ transform: 'translate' + transitionAxis + '(' + npos + 'px)' }); //Transition for the next element to enter viewport
 }
+

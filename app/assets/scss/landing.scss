@@ -7,7 +7,7 @@ header{
         border:none;
         .navbar-brand{
             font-size: 25px;
-            color: #fff;
+            color: rgb(255, 255, 255);
         }
         .navbar-nav{
             li{
@@ -132,6 +132,9 @@ section{
             position: absolute;
         }
     }
+}
+&.options{
+    background: #f0f0f0;
 }
 .steps{
     margin-bottom: 60px;
