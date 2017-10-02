@@ -1,0 +1,158 @@
+@import 'partials/variables';
+@import 'partials/common';
+
+header{
+    .navbar-inverse{
+        background: none;
+        border:none;
+        .navbar-brand{
+            font-size: 25px;
+            color: #fff;
+        }
+        .navbar-nav{
+            li{
+                margin: 0px 5px;
+                a{
+                    color: rgba(255,255,255,0.9);
+                    
+                    &.btn{
+                        &.btn-custom{
+                            border:1px solid #fff;
+                            padding: 6px 25px;
+                            &:hover{
+                                background-color: #fff;
+                                color: $base-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.affix{
+            background:$base-color;
+        }
+    }
+}
+.outer{
+    .inner{
+        height: 100vh;
+    }
+}
+section{
+    padding: 30px 0px;
+    h1{
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 50px;
+       
+    }
+    .content{
+        padding-top: 30px;
+        padding-left: 43px;
+        p{
+            font-weight: 500;
+        }
+        h4{
+            font-size: 13px;
+            font-weight: 700;
+            margin: 20px 0px;
+        }
+    }
+    &.banner{
+        padding: 0px;
+    background: $base-color;
+    height: 100vh;
+    text-align: center;
+        h1{
+            font-weight: 300;
+            margin-bottom:15px;
+            color: rgba(255, 255, 255, 0.91);
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 100;
+            color: rgba(255, 255, 255, 0.91);
+        }
+        .btn{
+            &.btn-custom{
+                margin-top: 30px;
+                border:1px solid #fff;
+                padding: 10px 0px;
+                width: 200px;
+                .svgImage{
+                    width:20px;
+                    height: 20px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                    g{
+                        path{
+                            fill:#fff;
+                        }
+                    }   
+                }
+                &:hover{
+                    background-color: #fff;
+                    color: $base-color;
+                    .svgImage{
+                        g{
+                            path{
+                                fill:$base-color;
+                            }
+                        } 
+                    }
+                }
+            }
+           
+        }
+}
+&.getting-started{
+    h2{
+        font-size: 20px;
+        
+        position: relative;
+        span{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding-top: 3px;
+            color: #fff;
+            font-weight: 100;
+            margin-right: 10px;
+            background: $base-color;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        &:after{
+            content: '';
+            width: 75%;
+            bottom: -10px;
+            left: 43px;
+            height: 2px;
+            background: $sec-color;
+            position: absolute;
+        }
+    }
+}
+.steps{
+    margin-bottom: 60px;
+}
+pre{
+    width: 75%;
+    margin-top: 10px;
+    background: #404040;
+    color: #fff;
+    border-radius: 3px;
+    border-color: transparent;  
+}
+}
+footer{
+    background:#e0e0e0;
+    padding:10px 0px;
+    p{
+        margin-bottom:0px;
+        img{
+            width:15px;
+            margin:0px 10px;
+        }
+    }
+}

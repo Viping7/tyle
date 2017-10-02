@@ -1,5 +1,5 @@
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background: #fafafa; }
 
 header {
@@ -9,29 +9,7 @@ header {
     font-size: 40px;
     font-weight: 500; }
     header h1 span {
-      color: #45C994; }
-
-.btn.btn-custom {
-  padding: 10px 37px;
-  border-radius: 4px;
-  margin: 10px 5px 0px 5px;
-  background: #45C994;
-  border: 1px solid transparent;
-  color: #fff; }
-  .btn.btn-custom:hover {
-    border-color: #45C994;
-    color: #45C994;
-    background: none; }
-  .btn.btn-custom.btn-custom-inverse {
-    border-color: #45C994;
-    color: #45C994;
-    background: none; }
-    .btn.btn-custom.btn-custom-inverse:hover {
-      background: #45C994;
-      color: #fff; }
-  @media (max-width: 767px) {
-    .btn.btn-custom {
-      padding: 12px 27px; } }
+      color: #494ea5; }
 
 .form-control {
   border-radius: 2px;
@@ -41,7 +19,7 @@ header {
   box-shadow: none;
   border: 1px solid #ddd; }
   .form-control:focus {
-    border-color: #45C994;
+    border-color: #494ea5;
     box-shadow: none; }
   @media (max-width: 600px) {
     .form-control {

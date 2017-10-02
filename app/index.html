@@ -7,13 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="favicon.ico" sizes="16x16" type="image/png">
     <title>Tyle</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,500,500i,600,700" rel="stylesheet">    
     <!--build:css assets/css/main.min.css -->
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.css">
-    <link rel="stylesheet" href="assets/css/tyle.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/landing.css">
     <!--endbuild-->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -23,65 +20,100 @@
 
 <body>
     <header>
-        <h1>T<span>y</span>le</h1>
+        <nav class="navbar navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="197">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand" href="#">Tyle</a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#getting-started" class='get-start' >Getting Started</a></li>
+                  <li><a href="quiz.html" target='_blank'>View Demo</a></li>
+                  <li><a href="https://github.com/Viping7/tyle/archive/master.zip" class="btn btn-custom" download>Download</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
     </header>
 
-    <section class="tyle-area">
-                   
-                    <div class="tyle-container">
-                        <div class="item">
-                                <div class="outer">
-                                    <div class="inner">
-                                        <h3>What's your first name?*</h3>
-                                        <input type="text" class="form-control">
-                                        <button class="btn btn-custom form-item-changer">Next</button>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="item">
-                            <div class="outer">
-                                <div class="inner">
-                                    <h3>Where would you find the Mariana Trench?</h3>
-                                    <button class="btn btn-custom form-item-changer">Atlantic Ocean</button>
-                                    <button class="btn btn-custom form-item-changer">Indian Ocean</button>
-                                    <button class="btn btn-custom form-item-changer">Pacific Ocean</button>
-                                    <button class="btn btn-custom form-item-changer">Artic Ocean</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="item">
-                            <div class="outer">
-                                <div class="inner">
-                                    <h3>What is the capital city of Australia?*</h3>
-
-
-                                    <button class="btn btn-custom">Sydney</button>
-                                    <button class="btn btn-custom">Adelide</button>
-                                    <button class="btn btn-custom">Caneberra</button>
-                                    <button class="btn btn-custom">Melbourne</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-              
+    <section class="banner">
+        <div class="container">
+            <div class="outer">
+                <div class="inner">
+                    <h1>An Interactive Content Display Plugin</h1>
+                    <h3>Simple . Responsive . Open Source</h3>
+                    <a href="https://github.com/Viping7/tyle" class="btn btn-custom"><img src='assets/img/icons/002-github-logo.svg' class="svgImage"> View in github</a>
+                                 </div>
+            </div>
         </div>
-
     </section>
-    <!--build:js assets/js/main.min.js -->
+    <section class="getting-started" id='getting-started'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Getting Started</h1>
+                </div>
+                <div class="col-md-12 steps one">
+                    <h2><span>1</span> Installing</h2>
+                    <div class="content">
+                    <p>Download the zip file from <a href="#">here</a></p>
+                    <h4>Or</h4>
+                    <p>Install from npm registry </p>
+                    <pre><code>npm install --save-dev tyle</code></pre>
+                </div>
+                </div>
+                <div class="col-md-12 steps">
+                        <h2><span>2</span> Add js and css files to your html</h2>
+                        <div class="content">
+                        <p>You can find <strong>tyle.css</strong> from <em>dist/css</em> and <strong>tyle.js</strong> from <em>dist/js</em></p>
+                        <pre><code>&lt;link rel="stylesheet" href="./tyle.css"&gt;</code></pre>
+                        <pre><code>&lt;script src='./tyle.js'&gt; &lt;/script src='./tyle.js'&gt;</code></pre>
+                    </div>
+                    </div>
+                <div class="col-md-12 steps">
+                            <h2><span>3</span> HTML Structure</h2>
+                            <div class="content">
+                             
+                            <pre><code>&lt;div class='tyle-area'&gt;
+    &lt;div class='tyle-container'&gt; 
+        &lt;div class='item'&gt; Content 1 &lt;/div&gt;   
+        &lt;div class='item'&gt; Content 2 &lt;/div&gt;   
+        &lt;div class='item'&gt; Content 3 &lt;/div&gt;   
+        &lt;div class='item'&gt; Content 4 &lt;/div&gt;   
+    &lt;/div&gt;           
+&lt;/div&gt;           
+                            </code></pre>
+                            </div>
+            </div>
+            <div class="col-md-12 steps">
+                    <h2><span>4</span> Calling tyle</h2>
+                    <div class="content">
+                     
+                    <pre><code>
+$('.tyle-container').tyle(900);          
+                    </code></pre>
+                    <p><strong>Note:</strong> 900 here is animation duration, If not specified it will take default duration which is 1300</p>
+                    </div>
+    </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class='container'>
+            <p class='text-center'>Made with <img src='assets/img/icons/like.svg'> by Vipin</p>
+           
+        </div>    
+    </footer>
+    <a href="https://github.com/viping7/tyle"><img style="position: absolute; top: 0; right: 0; border: 0;z-index:999999" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>    <!--build:js assets/js/main.min.js -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/step-form.js"></script>
-    <script src="assets/js/owl.carousel.js"></script>
-   
+    <script src="assets/js/svgImage.js"></script>
     <!--endbuild-->
-    <script>
-        
-    $(document).on('ready', function () {
-        $('.tyle-container').tyle();
-    })
-        </script>
 </body>
 
 </html>

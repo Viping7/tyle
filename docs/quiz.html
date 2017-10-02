@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" sizes="16x16" type="image/png">
+    <title>Tyle</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <h1>T<span>y</span>le</h1>
+    </header>
+
+    <section class="tyle-area">
+
+        <div class="tyle-container">
+            <div class="item">
+                <div class="outer">
+                    <div class="inner">
+                        <h3>What's your first name?*</h3>
+                        <input type="text" class="form-control">
+                        <button class="btn btn-custom form-item-changer">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="outer">
+                    <div class="inner">
+                        <h3>Where would you find the Mariana Trench?</h3>
+                        <button class="btn btn-custom form-item-changer">Atlantic Ocean</button>
+                        <button class="btn btn-custom form-item-changer">Indian Ocean</button>
+                        <button class="btn btn-custom form-item-changer">Pacific Ocean</button>
+                        <button class="btn btn-custom form-item-changer">Artic Ocean</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="outer">
+                    <div class="inner">
+                        <h3>What is the capital city of Australia?*</h3>
+
+
+                        <button class="btn btn-custom">Sydney</button>
+                        <button class="btn btn-custom">Adelide</button>
+                        <button class="btn btn-custom">Caneberra</button>
+                        <button class="btn btn-custom">Melbourne</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+
+    </section>
+    <script src="assets/js/main.min.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $('.tyle-container').tyle(900);
+        })
+    </script>
+</body>
+
+</html>

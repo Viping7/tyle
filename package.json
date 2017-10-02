@@ -1,8 +1,9 @@
 {
-  "name": "Tyla",
+  "name": "Tyle",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Typeform like responsive jquery slider plugin ",
+  "main": "./dist/js/tyle.js",
+  "style": "./dist/css/tyle.css",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "gulp": "^3.9.1"
@@ -16,16 +17,21 @@
     "gulp-imagemin": "^3.0.3",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
-    "gulp-useref": "^3.1.2"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp-useref": "^3.1.2",
+    "jshint-stylish": "^2.2.1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Viping7/tyle"
   },
-  "author": "",
-  "license": "ISC",
-  "homepage": "
+  "author": {
+    "name": "Vipin Gopinath ",
+    "email": "vipin.vipin.g498@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "viping7.github.io/tyle",
+  "bugs": {
+    "url": "https://github.com/Viping7/tyle/issues",
+    "email": "vipin.vipin.g498@gmail.com"
+  }
 }

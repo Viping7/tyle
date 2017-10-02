@@ -1,6 +1,6 @@
 @import 'partials/variables';
 body{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Raleway', sans-serif;    
     background: #fafafa;
 }
 header{
@@ -15,37 +15,51 @@ header{
    }
 }
 
-.btn{
-    &.btn-custom{
-        padding: 10px 37px;
-        border-radius: 4px;
-        margin:10px 5px 0px 5px;
-        background: $base-color;
-        border: 1px solid transparent;
-        color: #fff;
-       
-        &:hover{
-            border-color: $base-color;
-            color: $base-color;
-            background: none;
-          
-        }
-        &.btn-custom-inverse{
-            border-color: $base-color;
-            color: $base-color;
-            background: none;
-            &:hover{
-                background: $base-color;
-                color:#fff;
-                
-            }
-        }
-        @media(max-width:767px){
-            padding: 12px 27px;
-        }
-    }
-   
-}
+// .step-nav {
+//     .nav-btn {
+//         .svgImage {
+//             height: 30px;
+//             g{
+//                 path,polygon{
+//                     fill:$base-color !important;
+//                 }
+//             }
+//         }
+//         &:disabled {
+//             opacity: 0.5;
+//         }
+//         &:focus {
+//             outline: none;
+//         }
+//         &.next-btn {
+//             -moz-transform: rotate(180deg);
+//             -webkit-transform: rotate(180deg);
+//             -ms-transform: rotate(180deg);
+//             transform: rotate(180deg);
+//         }
+//     }
+//     @media(max-width:991px) {
+//         position: absolute;
+//         top: 25%;
+//         .nav-btn {
+//             img {
+//                 width: 23px;
+//             }
+//             &.next-btn {
+//                 -moz-transform: rotate(90deg);
+//                 -webkit-transform: rotate(90deg);
+//                 -ms-transform: rotate(90deg);
+//                 transform: rotate(90deg);
+//             }
+//             &.prev-btn {
+//                 -moz-transform: rotate(-90deg);
+//                 -webkit-transform: rotate(-90deg);
+//                 -ms-transform: rotate(-90deg);
+//                 transform: rotate(- 90deg);
+//             }
+//         }
+//     }
+// }
 .form-control{
     border-radius: 2px;
     width: 450px;

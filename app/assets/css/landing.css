@@ -1,0 +1,145 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #fafafa; }
+
+.btn.btn-custom {
+  padding: 10px 37px;
+  border-radius: 4px;
+  margin: 10px 5px 0px 5px;
+  background: #494ea5;
+  border: 1px solid transparent;
+  color: #fff; }
+  .btn.btn-custom:hover {
+    border-color: #494ea5;
+    color: #494ea5;
+    background: none; }
+  .btn.btn-custom.btn-custom-inverse {
+    border-color: #494ea5;
+    color: #494ea5;
+    background: none; }
+    .btn.btn-custom.btn-custom-inverse:hover {
+      background: #494ea5;
+      color: #fff; }
+  @media (max-width: 767px) {
+    .btn.btn-custom {
+      padding: 12px 27px; } }
+
+.outer {
+  display: table;
+  margin: 0 auto;
+  width: 100%; }
+  .outer .inner {
+    display: table-cell;
+    vertical-align: middle;
+    height: 45vh; }
+    @media (max-width: 991px) {
+      .outer .inner {
+        height: auto; } }
+
+header .navbar-inverse {
+  background: none;
+  border: none; }
+  header .navbar-inverse .navbar-brand {
+    font-size: 25px;
+    color: #fff; }
+  header .navbar-inverse .navbar-nav li {
+    margin: 0px 5px; }
+    header .navbar-inverse .navbar-nav li a {
+      color: rgba(255, 255, 255, 0.9); }
+      header .navbar-inverse .navbar-nav li a.btn.btn-custom {
+        border: 1px solid #fff;
+        padding: 6px 25px; }
+        header .navbar-inverse .navbar-nav li a.btn.btn-custom:hover {
+          background-color: #fff;
+          color: #494ea5; }
+  header .navbar-inverse.affix {
+    background: #494ea5; }
+
+.outer .inner {
+  height: 100vh; }
+
+section {
+  padding: 30px 0px; }
+  section h1 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 50px; }
+  section .content {
+    padding-top: 30px;
+    padding-left: 43px; }
+    section .content p {
+      font-weight: 500; }
+    section .content h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin: 20px 0px; }
+  section.banner {
+    padding: 0px;
+    background: #494ea5;
+    height: 100vh;
+    text-align: center; }
+    section.banner h1 {
+      font-weight: 300;
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.91); }
+    section.banner h3 {
+      font-size: 20px;
+      font-weight: 100;
+      color: rgba(255, 255, 255, 0.91); }
+    section.banner .btn.btn-custom {
+      margin-top: 30px;
+      border: 1px solid #fff;
+      padding: 10px 0px;
+      width: 200px; }
+      section.banner .btn.btn-custom .svgImage {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 10px; }
+        section.banner .btn.btn-custom .svgImage g path {
+          fill: #fff; }
+      section.banner .btn.btn-custom:hover {
+        background-color: #fff;
+        color: #494ea5; }
+        section.banner .btn.btn-custom:hover .svgImage g path {
+          fill: #494ea5; }
+  section.getting-started h2 {
+    font-size: 20px;
+    position: relative; }
+    section.getting-started h2 span {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      padding-top: 3px;
+      color: #fff;
+      font-weight: 100;
+      margin-right: 10px;
+      background: #494ea5;
+      display: inline-block;
+      border-radius: 50%; }
+    section.getting-started h2:after {
+      content: '';
+      width: 75%;
+      bottom: -10px;
+      left: 43px;
+      height: 2px;
+      background: rgba(73, 78, 165, 0.41);
+      position: absolute; }
+  section .steps {
+    margin-bottom: 60px; }
+  section pre {
+    width: 75%;
+    margin-top: 10px;
+    background: #404040;
+    color: #fff;
+    border-radius: 3px;
+    border-color: transparent; }
+
+footer {
+  background: #e0e0e0;
+  padding: 10px 0px; }
+  footer p {
+    margin-bottom: 0px; }
+    footer p img {
+      width: 15px;
+      margin: 0px 10px; }
