@@ -2,6 +2,16 @@
 
 A typeform like transition plugin
 
+## Version 1.1.0
+
+### New Feature
+
+* Option to select transition styles
+
+### Bug Fixes
+
+* Responsive display Issue Fixed
+
 ## Getting started
 
 ### Installing tyle
