@@ -86,5 +86,10 @@ header{
         font-size: 20px;
         margin: 0px 100px;
         line-height: 35px;
+        @media (max-width:767px){
+            font-size: 14px;
+            line-height: normal;
+            margin:0px;
+        }
     }
 }

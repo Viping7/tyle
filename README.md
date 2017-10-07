@@ -13,7 +13,7 @@ npm install --save-dev tyle
 ```
 
 or 
-Download zip file from above
+Download zip file from [here](https://viping7.github.io/tyle/)
 
 ###  Add js and css files to your html
 
@@ -22,7 +22,7 @@ Download zip file from above
 ```
 
 ```
-<link rel="stylesheet" href="./tyle.css">
+<script src="./tyle.js"></script>
 ```
 ### HTML Structure
 

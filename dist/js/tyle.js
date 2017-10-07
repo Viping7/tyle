@@ -19,21 +19,30 @@ $.fn.tyle = function (options) {
     var showProgressBar, showProgressCount;
     var targetElement = $(this);
     targetElement.before(' <div class="progress-container"></div>');
-    if (options.showProgress == undefined) {
-        showProgressBar = defaultOptions.showProgress;
-    }
-    else {
-        showProgressBar = options.showProgress;
-    }
+    if (options) {
+        if (options.showProgress !== undefined)
+            showProgressBar = options.showProgress;
+        else
+            showProgressBar = defaultOptions.showProgress;
+        if (options.showProgressCount !== undefined)
+            showProgressCount = options.showProgressCount;
+        else
+            showProgressCount = defaultOptions.showProgressCount;
+        if (options.onFinish != undefined && typeof (options.onFinish) == 'function')
+            defaultOptions.onFinish = options.onFinish;
 
-    if (options.showProgressCount == undefined) {
-        showProgressCount = defaultOptions.showProgressCount;
+        if (options.duration) {
+            targetElement.children().css({
+                '-webkit-transition-duration': options.duration / 1000 + 's',
+                '-moz-transition-duration': options.duration / 1000 + 's',
+                '-mz-transition-duration': options.duration / 1000 + 's',
+                'transition-duration': options.duration / 1000 + 's'
+            });
+        }
     }
     else {
-        showProgressCount = options.showProgressCount;
-    }
-    if (options.onFinish != undefined && typeof (options.onFinish) == 'function') {
-        defaultOptions.onFinish = options.onFinish;
+        showProgressBar = defaultOptions.showProgress;
+        showProgressCount = defaultOptions.showProgressCount;
     }
     if (showProgressBar) {
         $('.progress-container').append('<div class="progress-indicator"><span class="progress-bar"></span></div>');
@@ -42,12 +51,7 @@ $.fn.tyle = function (options) {
         $('.progress-container').append(' <div class="progress-count"></div>');
     }
     targetElement.after('<div class="step-nav"><button class="form-item-changer nav-btn prev-btn" btn-type="prev" disabled="true">Prev</button><button class="form-item-changer nav-btn next-btn">Next</button></div>');
-    targetElement.children().css({
-        '-webkit-transition-duration': options.duration / 1000 + 's',
-        '-moz-transition-duration': options.duration / 1000 + 's',
-        '-mz-transition-duration': options.duration / 1000 + 's',
-        'transition-duration': options.duration / 1000 + 's'
-    });
+
     itemLength = targetElement.children().length;
     targetElement.children().first().addClass('active');
     progressIndication(0, itemLength);
@@ -95,7 +99,7 @@ function disableBtn(btn, flag) {
 
 function progressIndication(itemIndex, itemLength) {
     var progressPercent;
-    $('.progress-count').html('Questions ' + (itemIndex + 1) + ' of ' + itemLength);
+    $('.progress-count').html((itemIndex + 1) + ' of ' + itemLength);
     if (itemIndex <= itemLength - 1) {
         progressPercent = (itemIndex + 1) / itemLength * 100;
     }
