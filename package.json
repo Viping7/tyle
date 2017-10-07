@@ -1,7 +1,7 @@
 {
   "name": "tyle",
-  "version": "1.0.4",
-  "description": "Typeform like responsive jquery slider plugin ",
+  "version": "1.1.0",
+  "description": "Typeform like responsive jquery slider plugin",
   "main": "./dist/js/tyle.js",
   "style": "./dist/css/tyle.css",
   "dependencies": {
