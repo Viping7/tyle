@@ -1,7 +1,7 @@
 'use strict';
 var itemLength;
 var defaultOptions = {
-    showProgress: true,
+    showProgressBar: true,
     showProgressCount: true,
     onFinish: function () {
         alert('Finished');
@@ -16,21 +16,23 @@ $(window).on('resize', function () {
 
 // Main function to trigger tyle
 $.fn.tyle = function (options) {
-    var showProgressBar, showProgressCount;
+    var showProgressBar, showProgressCount, transitionStyle;
     var targetElement = $(this);
     targetElement.before(' <div class="progress-container"></div>');
     if (options) {
-        if (options.showProgress !== undefined)
-            showProgressBar = options.showProgress;
-        else
-            showProgressBar = defaultOptions.showProgress;
-        if (options.showProgressCount !== undefined)
+        if (options.showProgressBar !== undefined) {
+            showProgressBar = options.showProgressBar;
+        } else {
+            showProgressBar = defaultOptions.showProgressBar;
+        }
+        if (options.showProgressCount !== undefined) {
             showProgressCount = options.showProgressCount;
-        else
+        } else {
             showProgressCount = defaultOptions.showProgressCount;
-        if (options.onFinish != undefined && typeof (options.onFinish) == 'function')
+        }
+        if (options.onFinish !== undefined && typeof(options.onFinish) === 'function') {
             defaultOptions.onFinish = options.onFinish;
-
+        }
         if (options.duration) {
             targetElement.children().css({
                 '-webkit-transition-duration': options.duration / 1000 + 's',
@@ -39,9 +41,16 @@ $.fn.tyle = function (options) {
                 'transition-duration': options.duration / 1000 + 's'
             });
         }
-    }
-    else {
-        showProgressBar = defaultOptions.showProgress;
+        if (options.transition) {
+            transitionStyle = options.transition;
+        }
+        if (options.transition === 'horizontal') {
+            $('.item').addClass('inline-item');
+            $('.tyle-area').addClass('inline-tyle');
+        }
+
+    } else {
+        showProgressBar = defaultOptions.showProgressBar;
         showProgressCount = defaultOptions.showProgressCount;
     }
     if (showProgressBar) {
@@ -57,13 +66,13 @@ $.fn.tyle = function (options) {
     progressIndication(0, itemLength);
 
     $('.form-item-changer').click(function () {
-        if ($(window).width() > 991) {
-            // For vertical transition in desktop
-            $(this).initTyle(targetElement, "height");
-        } else {
-            // For horizontal transition in mobile and tablet
+        if (transitionStyle === 'horizontal') {
             $(this).initTyle(targetElement, "width");
+        } else {
+            $(this).initTyle(targetElement, "height");
         }
+
+
     });
 };
 
@@ -81,10 +90,9 @@ $.fn.initTyle = function (targetElement, transType) {
     if (nextItemIndex < 0) {
         disableBtn('.next-btn', true);
     }
-    if ((itemIndex >= 0 && itemIndex < itemLength - 1) || btnType == 'prev') {
+    if ((itemIndex >= 0 && itemIndex < itemLength - 1) || btnType === 'prev') {
         elementTransitionType(activeItem, itemLength, itemIndex, btnType, transType);
-    }
-    else {
+    } else {
         defaultOptions.onFinish(); // On end
     }
 };
@@ -93,7 +101,7 @@ $.fn.initTyle = function (targetElement, transType) {
 
 function disableBtn(btn, flag) {
     $(btn).attr('disabled', flag);
-};
+}
 
 // To Indicate step progress
 
@@ -103,17 +111,17 @@ function progressIndication(itemIndex, itemLength) {
     if (itemIndex <= itemLength - 1) {
         progressPercent = (itemIndex + 1) / itemLength * 100;
     }
-    $('.progress-bar').css({ 'width': progressPercent + '%' });
+    $('.progress-bar').css({'width': progressPercent + '%'});
 }
 // To get the type of transition
 function elementTransitionType(activeItem, itemLength, itemIndex, btnType, transType) {
     var transitionAxis, activeItemHeight, nextItemTransitionPos;
     itemIndex = itemIndex + 1;
     if (transType === 'height') {
-        activeItemHeight = activeItem.height();
+        activeItemHeight = activeItem.outerHeight();
         transitionAxis = 'Y'; // For selecting translate axis
     } else {
-        activeItemHeight = activeItem.width();
+        activeItemHeight = activeItem.outerWidth() + 5;
         transitionAxis = 'X'; // For selecting translate axis
     }
     var currentItemTransitionPos;
@@ -123,15 +131,13 @@ function elementTransitionType(activeItem, itemLength, itemIndex, btnType, trans
         itemIndex = itemIndex;
         if (itemIndex === 2) {
             nextItemTransitionPos = 0; // To resolve "Infinity" Error
-            disableBtn('.prev-btn', true)
-        }
-        else {
+            disableBtn('.prev-btn', true);
+        } else {
             nextItemTransitionPos = activeItemHeight * (itemIndex - 2); // To set position of element to inital state
         }
         currentItemTransitionPos = nextItemTransitionPos * 0.5; // Leaving Transition position prev
         transitionStyles(activeItem, activeItem.prev(), currentItemTransitionPos, -nextItemTransitionPos, transitionAxis);
-    }
-    else {
+    } else {
         progressIndication(itemIndex, itemLength);
         nextItemTransitionPos = activeItemHeight * itemIndex; // To set the position of next element
         currentItemTransitionPos = nextItemTransitionPos * 0.7; // Leaving Transition position next
@@ -142,7 +148,7 @@ function elementTransitionType(activeItem, itemLength, itemIndex, btnType, trans
 // Transition Styles
 
 function transitionStyles(activeItem, effectingEle, cpos, npos, transitionAxis) {
-    activeItem.removeClass('active').css({ transform: 'translate' + transitionAxis + '(' + cpos * 1.5 + 'px)' }); //Transition for the current element to exit viewport
-    effectingEle.addClass('active').css({ transform: 'translate' + transitionAxis + '(' + npos + 'px)' }); //Transition for the next element to enter viewport
+    activeItem.removeClass('active').css({transform: 'translate' + transitionAxis + '(' + cpos * 1.5 + 'px)'}); //Transition for the current element to exit viewport
+    effectingEle.addClass('active').css({transform: 'translate' + transitionAxis + '(' + npos + 'px)'}); //Transition for the next element to enter viewport
 }
 
